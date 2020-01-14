@@ -272,7 +272,10 @@ export default class DayGridEventRenderer extends EventRenderer {
           ''
           ) +
       '>' +
-        '<div class="fc-content">' +
+        '<div ' +
+          'class="fc-content" ' +
+          'data-first-segment-date="' + seg.firstSegDate + '" ' +
+          'data-last-segment-date="' + seg.lastSegDate + '">' +
           (this.dayGrid.isRTL ?
             titleHtml + ' ' + timeHtml : // put a natural space in between
             timeHtml + ' ' + titleHtml   //

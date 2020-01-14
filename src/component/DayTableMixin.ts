@@ -205,7 +205,10 @@ export default class DayTableMixin extends Mixin implements DayTableInterface {
 
           // must be matching integers to be the segment's start/end
           isStart: segFirst === rangeFirst,
-          isEnd: segLast === rangeLast
+          isEnd: segLast === rangeLast,
+
+          firstSegDate: this.dayDates[segFirst],
+          lastSegDate: this.dayDates[segLast]
         })
       }
     }
