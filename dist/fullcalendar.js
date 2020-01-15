@@ -6154,7 +6154,9 @@ var DayTableMixin = /** @class */ (function (_super) {
                     lastRowDayIndex: segLast - rowFirst,
                     // must be matching integers to be the segment's start/end
                     isStart: segFirst === rangeFirst,
-                    isEnd: segLast === rangeLast
+                    isEnd: segLast === rangeLast,
+                    firstSegDate: this.dayDates[segFirst],
+                    lastSegDate: this.dayDates[segLast]
                 });
             }
         }
@@ -14457,7 +14459,10 @@ var DayGridEventRenderer = /** @class */ (function (_super) {
                 ' style="' + skinCss + '"' :
                 '') +
             '>' +
-            '<div class="fc-content">' +
+            '<div ' +
+            'class="fc-content" ' +
+            'data-first-segment-date="' + seg.firstSegDate + '" ' +
+            'data-last-segment-date="' + seg.lastSegDate + '">' +
             (this.dayGrid.isRTL ?
                 titleHtml + ' ' + timeHtml : // put a natural space in between
                 timeHtml + ' ' + titleHtml //
